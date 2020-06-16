@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2B899BBB2498C6AE00C91EF9 /* AnimationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B899BBA2498C6AE00C91EF9 /* AnimationModel.swift */; };
 		2B899BBE2498C95000C91EF9 /* AnimationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B899BBD2498C95000C91EF9 /* AnimationDataManager.swift */; };
+		2B899BC024993F3E00C91EF9 /* CurvesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B899BBF24993F3E00C91EF9 /* CurvesTableViewController.swift */; };
 		2BCFB20F2498B5D30033BF25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCFB20E2498B5D30033BF25 /* AppDelegate.swift */; };
 		2BCFB2112498B5D30033BF25 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCFB2102498B5D30033BF25 /* SceneDelegate.swift */; };
 		2BCFB2132498B5D30033BF25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCFB2122498B5D30033BF25 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		2B899BBA2498C6AE00C91EF9 /* AnimationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationModel.swift; sourceTree = "<group>"; };
 		2B899BBD2498C95000C91EF9 /* AnimationDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDataManager.swift; sourceTree = "<group>"; };
+		2B899BBF24993F3E00C91EF9 /* CurvesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvesTableViewController.swift; sourceTree = "<group>"; };
 		2BCFB20B2498B5D30033BF25 /* CrazyRectangle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrazyRectangle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BCFB20E2498B5D30033BF25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BCFB2102498B5D30033BF25 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				2BCFB2122498B5D30033BF25 /* ViewController.swift */,
+				2B899BBF24993F3E00C91EF9 /* CurvesTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B899BBB2498C6AE00C91EF9 /* AnimationModel.swift in Sources */,
+				2B899BC024993F3E00C91EF9 /* CurvesTableViewController.swift in Sources */,
 				2B899BBE2498C95000C91EF9 /* AnimationDataManager.swift in Sources */,
 				2BCFB2132498B5D30033BF25 /* ViewController.swift in Sources */,
 				2BCFB20F2498B5D30033BF25 /* AppDelegate.swift in Sources */,

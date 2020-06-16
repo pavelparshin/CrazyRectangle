@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var buttonSetting: SpringButton!
     @IBOutlet var isRandom: UISwitch!
+    @IBOutlet var currentCurveLabel: UILabel!
+    @IBOutlet var selectCurveButton: UIButton!
+    @IBOutlet var curveStackView: UIStackView!
     
     //MARK: - Pravate propertys
     private let animationData = AnimationDataManager.shared
@@ -28,24 +31,38 @@ class ViewController: UIViewController {
         showProperties()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        animationModel.curve = AnimationDataManager.shared.selectCurve
+        showProperties()
+    }
+    
     //MARK: IB Action
+    @IBAction func randomSwitchAction() {
+        curveStackView.isHidden = isRandom.isOn
+    }
+    
     @IBAction func actionButton(_ sender: SpringButton) {
         let action = animationModel.animation
-        let curve = animationModel.curve
+        let selectCurve = AnimationDataManager.shared.selectCurve
         
-        setOptions(action: action, curve: curve)
+        setOptions(action: action, curve: selectCurve)
         
         showProperties()
-        
         rectActionView.animate()
         
         nextAnimation()
+    }
+    
+    @IBAction func unwindToCurve(_ unwindSegue: UIStoryboardSegue) {
     }
     
     //MARK: - Private methods
     
     //Setup properties for Spring animation
     private func setOptions(action: String, curve: String) {
+        
         
         rectActionView.animation = action
         rectActionView.curve = curve
@@ -62,6 +79,7 @@ class ViewController: UIViewController {
             rectActionView.repeatCount = animationModel.repeatCount
             
             randomAnimation = animationData.animations.randomElement()!
+        
         }
     }
     
@@ -87,6 +105,7 @@ class ViewController: UIViewController {
         descriptionLabel.text = isRandom.isOn ?
             animationModel.fullDescription : animationModel.shortDescription
         
+        selectCurveButton.setTitle(animationModel.curve, for: .normal)
         buttonSetting.setTitle("\(animationModel.animation)", for: .normal)
     }
     
@@ -104,9 +123,9 @@ class ViewController: UIViewController {
                 animationModel.animation = animationData.animations.first!
             }
         }
-        
+    
         buttonSetting.setTitle("next: \(animationModel.animation)", for: .normal)
-        
     }
+    
 }
 

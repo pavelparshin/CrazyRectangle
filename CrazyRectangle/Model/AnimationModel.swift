@@ -15,7 +15,10 @@ struct AnimationModel {
     var repeatCount: Float
     
     var shortDescription: String {
-        "Animation: \(animation)"
+        """
+        animation: \(animation)
+        curve: \(curve)
+        """
     }
     
     var fullDescription: String {
