@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B899BBB2498C6AE00C91EF9 /* AnimationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B899BBA2498C6AE00C91EF9 /* AnimationModel.swift */; };
+		2B899BBE2498C95000C91EF9 /* AnimationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B899BBD2498C95000C91EF9 /* AnimationDataManager.swift */; };
 		2BCFB20F2498B5D30033BF25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCFB20E2498B5D30033BF25 /* AppDelegate.swift */; };
 		2BCFB2112498B5D30033BF25 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCFB2102498B5D30033BF25 /* SceneDelegate.swift */; };
 		2BCFB2132498B5D30033BF25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCFB2122498B5D30033BF25 /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B899BBA2498C6AE00C91EF9 /* AnimationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationModel.swift; sourceTree = "<group>"; };
+		2B899BBD2498C95000C91EF9 /* AnimationDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDataManager.swift; sourceTree = "<group>"; };
 		2BCFB20B2498B5D30033BF25 /* CrazyRectangle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrazyRectangle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BCFB20E2498B5D30033BF25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BCFB2102498B5D30033BF25 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,8 +84,17 @@
 		2B899BB92498B8E200C91EF9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2B899BBA2498C6AE00C91EF9 /* AnimationModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2B899BBC2498C93C00C91EF9 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				2B899BBD2498C95000C91EF9 /* AnimationDataManager.swift */,
+			);
+			name = DataManager;
 			sourceTree = "<group>";
 		};
 		2BCFB2022498B5D30033BF25 = {
@@ -105,6 +118,7 @@
 		2BCFB20D2498B5D30033BF25 /* CrazyRectangle */ = {
 			isa = PBXGroup;
 			children = (
+				2B899BBC2498C93C00C91EF9 /* DataManager */,
 				2B899BB92498B8E200C91EF9 /* Model */,
 				2B899BB82498B8CF00C91EF9 /* ViewController */,
 				2B899BB72498B8BF00C91EF9 /* Storyboards */,
@@ -246,6 +260,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B899BBB2498C6AE00C91EF9 /* AnimationModel.swift in Sources */,
+				2B899BBE2498C95000C91EF9 /* AnimationDataManager.swift in Sources */,
 				2BCFB2132498B5D30033BF25 /* ViewController.swift in Sources */,
 				2BCFB20F2498B5D30033BF25 /* AppDelegate.swift in Sources */,
 				2BCFB2112498B5D30033BF25 /* SceneDelegate.swift in Sources */,
