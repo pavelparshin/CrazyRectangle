@@ -6,15 +6,21 @@
 //  Copyright © 2020 Pavel Parshin. All rights reserved.
 //
 
-import UIKit
+import Spring
 
 class ViewController: UIViewController {
-
+    @IBOutlet var rectActionView: SpringView!
+    @IBOutlet var descriptionLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
     }
 
-
+    @IBAction func actionButton(_ sender: SpringButton) {
+    }
+    
 }
 
