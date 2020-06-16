@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        showPropertys()
+        showProperties()
     }
     
     //MARK: IB Action
@@ -33,13 +33,9 @@ class ViewController: UIViewController {
         let action = animationModel.animation
         let curve = animationModel.curve
         
-        if isRandom.isOn {
-            setRandomOptions()
-        } else {
-            setOptions(action: action, curve: curve)
-        }
+        setOptions(action: action, curve: curve)
         
-        showPropertys()
+        showProperties()
         
         rectActionView.animate()
         
@@ -50,39 +46,46 @@ class ViewController: UIViewController {
     
     //Setup properties for Spring animation
     private func setOptions(action: String, curve: String) {
+        
         rectActionView.animation = action
         rectActionView.curve = curve
-    }
-    
-    private func setRandomOptions() {
-        rectActionView.animation = randomAnimation ?? animationData.animations.first!
-        rectActionView.curve = animationData.curves.randomElement() ?? ""
-        rectActionView.delay = CGFloat.random(in: 0...0.5)
-        rectActionView.duration = CGFloat.random(in: 0.5...1.5)
-        rectActionView.velocity = CGFloat.random(in: 0.2...0.9)
-        rectActionView.repeatCount = Float.random(in: 1...3)
-        
-        randomAnimation = animationData.animations.randomElement()!
-        print(rectActionView.delay)
-    }
-    
-    private func showPropertys() {
         
         if isRandom.isOn {
-            descriptionLabel.text = """
-            animation: \(animationModel.animation)
-            curve: \(animationModel.curve)
-            delay: \(animationModel.delay)
-            duration: \(animationModel.duration)
-            velocity: \(animationModel.velocity)
-            repeatCount: \(animationModel.repeatCount)
-            """
-        } else {
-            descriptionLabel.text = """
-            animation: \(animationModel.animation)
-            curve: \(animationModel.curve)
-            """
+            
+            getRandomAnimation()
+            
+            rectActionView.animation = animationModel.animation
+            rectActionView.curve = animationModel.curve
+            rectActionView.delay = CGFloat(animationModel.delay)
+            rectActionView.duration = CGFloat(animationModel.duration)
+            rectActionView.velocity = CGFloat(animationModel.velocity)
+            rectActionView.repeatCount = animationModel.repeatCount
+            
+            randomAnimation = animationData.animations.randomElement()!
         }
+    }
+    
+    private func getRandomAnimation() {
+        
+        let animation = randomAnimation ?? animationData.animations.first!
+        let curve = animationData.curves.randomElement() ?? ""
+        let delay = Float.random(in: 0...0.5)
+        let duration = Float.random(in: 0.5...1.5)
+        let velocity = Float.random(in: 0.2...0.9)
+        let repeatCount = Float.random(in: 1...3)
+        
+        animationModel = AnimationModel(animation: animation,
+                                        curve: curve,
+                                        delay: delay,
+                                        duration: duration,
+                                        velocity: velocity,
+                                        repeatCount: repeatCount)
+    }
+    
+    private func showProperties() {
+
+        descriptionLabel.text = isRandom.isOn ?
+            animationModel.fullDescription : animationModel.shortDescription
         
         buttonSetting.setTitle("\(animationModel.animation)", for: .normal)
     }
@@ -94,6 +97,7 @@ class ViewController: UIViewController {
             
             //get index for current animation
             let indexAnimation = animationData.animations.firstIndex(of: animationModel.animation) ?? 0
+            
             if indexAnimation < (animationData.animations.count - 1) {
                 animationModel.animation = animationData.animations[indexAnimation + 1]
             } else {
