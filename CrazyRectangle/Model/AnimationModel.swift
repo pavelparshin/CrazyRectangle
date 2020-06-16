@@ -13,8 +13,6 @@ struct AnimationModel {
     var duration: Float
     var velocity: Float
     var repeatCount: Float
-    var rotate: Float
-    var opacity: Float
     
     static func setDefault() -> AnimationModel {
         return AnimationModel(animation: AnimationDataManager.shared.animations.first ?? "",
@@ -22,8 +20,6 @@ struct AnimationModel {
                               delay: 0,
                               duration: 0.7,
                               velocity: 0.7,
-                              repeatCount: 1,
-                              rotate: 0,
-                              opacity: 1)
+                              repeatCount: 1)
     }
 }
