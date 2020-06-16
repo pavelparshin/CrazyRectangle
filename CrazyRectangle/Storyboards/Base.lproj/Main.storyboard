@@ -24,11 +24,21 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngO-TZ-9Rt" customClass="SpringButton" customModule="Spring">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="175"/>
+                                        <connections>
+                                            <action selector="actionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H93-kC-v0T"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="IJ3-Qc-00z" firstAttribute="centerY" secondItem="BXx-Qp-fnv" secondAttribute="centerY" id="21e-VC-MOA"/>
                                     <constraint firstAttribute="height" constant="175" id="S1A-kK-vEx"/>
+                                    <constraint firstAttribute="bottom" secondItem="ngO-TZ-9Rt" secondAttribute="bottom" id="UUZ-0B-C0q"/>
+                                    <constraint firstItem="ngO-TZ-9Rt" firstAttribute="leading" secondItem="BXx-Qp-fnv" secondAttribute="leading" id="WwM-dU-JYE"/>
+                                    <constraint firstAttribute="trailing" secondItem="ngO-TZ-9Rt" secondAttribute="trailing" id="X4y-yB-caT"/>
+                                    <constraint firstItem="ngO-TZ-9Rt" firstAttribute="top" secondItem="BXx-Qp-fnv" secondAttribute="top" id="vYb-Br-SbA"/>
                                     <constraint firstItem="IJ3-Qc-00z" firstAttribute="centerX" secondItem="BXx-Qp-fnv" secondAttribute="centerX" id="yhf-Vd-oRv"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>

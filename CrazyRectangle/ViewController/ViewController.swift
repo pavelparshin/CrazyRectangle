@@ -52,7 +52,9 @@ class ViewController: UIViewController {
         showProperties()
         rectActionView.animate()
         
-        nextAnimation()
+        if sender.tag == 0 {
+            nextAnimation()
+        }
     }
     
     @IBAction func unwindToCurve(_ unwindSegue: UIStoryboardSegue) {
@@ -62,7 +64,6 @@ class ViewController: UIViewController {
     
     //Setup properties for Spring animation
     private func setOptions(action: String, curve: String) {
-        
         
         rectActionView.animation = action
         rectActionView.curve = curve
