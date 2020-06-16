@@ -24,11 +24,21 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngO-TZ-9Rt" customClass="SpringButton" customModule="Spring">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="175"/>
+                                        <connections>
+                                            <action selector="actionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H93-kC-v0T"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="IJ3-Qc-00z" firstAttribute="centerY" secondItem="BXx-Qp-fnv" secondAttribute="centerY" id="21e-VC-MOA"/>
                                     <constraint firstAttribute="height" constant="175" id="S1A-kK-vEx"/>
+                                    <constraint firstAttribute="bottom" secondItem="ngO-TZ-9Rt" secondAttribute="bottom" id="UUZ-0B-C0q"/>
+                                    <constraint firstItem="ngO-TZ-9Rt" firstAttribute="leading" secondItem="BXx-Qp-fnv" secondAttribute="leading" id="WwM-dU-JYE"/>
+                                    <constraint firstAttribute="trailing" secondItem="ngO-TZ-9Rt" secondAttribute="trailing" id="X4y-yB-caT"/>
+                                    <constraint firstItem="ngO-TZ-9Rt" firstAttribute="top" secondItem="BXx-Qp-fnv" secondAttribute="top" id="vYb-Br-SbA"/>
                                     <constraint firstItem="IJ3-Qc-00z" firstAttribute="centerX" secondItem="BXx-Qp-fnv" secondAttribute="centerX" id="yhf-Vd-oRv"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -52,18 +62,45 @@
                                     <action selector="actionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aiA-p6-TLa"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WfV-Pw-RBJ">
-                                <rect key="frame" x="59.5" y="372" width="201.5" height="31"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WrL-ie-hGz">
+                                <rect key="frame" x="59.5" y="347" width="201.5" height="64"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random Animation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qm3-32-8Nr">
-                                        <rect key="frame" x="0.0" y="0.0" width="144.5" height="31"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Kff-47-7gk">
-                                        <rect key="frame" x="152.5" y="0.0" width="51" height="31"/>
-                                    </switch>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WfV-Pw-RBJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="201.5" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random Animation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qm3-32-8Nr">
+                                                <rect key="frame" x="0.0" y="0.0" width="144.5" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Kff-47-7gk">
+                                                <rect key="frame" x="152.5" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="randomSwitchAction" destination="BYZ-38-t0r" eventType="valueChanged" id="gM1-fb-1eQ"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5Kp-AE-2Hw">
+                                        <rect key="frame" x="6.5" y="31" width="188" height="33"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current curve:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvm-E8-Mon">
+                                                <rect key="frame" x="0.0" y="0.0" width="110" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7JQ-r1-HH0">
+                                                <rect key="frame" x="115" y="0.0" width="73" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="Set curve"/>
+                                                <connections>
+                                                    <segue destination="en3-P0-sjX" kind="presentation" modalPresentationStyle="fullScreen" id="2Ca-YP-cnE"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -71,25 +108,79 @@
                         <constraints>
                             <constraint firstItem="WtI-hJ-Nfl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2dF-Cp-U4n"/>
                             <constraint firstItem="WtI-hJ-Nfl" firstAttribute="width" secondItem="BXx-Qp-fnv" secondAttribute="width" multiplier="1:1" id="4fW-72-2yv"/>
-                            <constraint firstItem="WfV-Pw-RBJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Fa-K5-0gs"/>
+                            <constraint firstItem="WtI-hJ-Nfl" firstAttribute="top" secondItem="WrL-ie-hGz" secondAttribute="bottom" constant="27" id="6Gm-gO-ATQ"/>
                             <constraint firstItem="BXx-Qp-fnv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="Cdm-An-NuP"/>
                             <constraint firstItem="BXx-Qp-fnv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="N2t-ec-N5T"/>
-                            <constraint firstItem="WtI-hJ-Nfl" firstAttribute="top" secondItem="WfV-Pw-RBJ" secondAttribute="bottom" constant="35" id="PXX-V5-Qjj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WtI-hJ-Nfl" secondAttribute="bottom" constant="100" id="QuI-0P-rld"/>
+                            <constraint firstItem="WrL-ie-hGz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="h2b-H8-ANI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BXx-Qp-fnv" secondAttribute="trailing" constant="40" id="lfM-Ud-ssW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="buttonSetting" destination="WtI-hJ-Nfl" id="RYQ-vP-vew"/>
+                        <outlet property="currentCurveLabel" destination="fvm-E8-Mon" id="VV1-vM-TQo"/>
+                        <outlet property="curveStackView" destination="5Kp-AE-2Hw" id="YMG-4U-G6z"/>
                         <outlet property="descriptionLabel" destination="IJ3-Qc-00z" id="X2V-J0-oik"/>
                         <outlet property="isRandom" destination="Kff-47-7gk" id="KuG-ZV-tJU"/>
                         <outlet property="rectActionView" destination="BXx-Qp-fnv" id="ktG-We-yL0"/>
+                        <outlet property="selectCurveButton" destination="7JQ-r1-HH0" id="wAU-5E-wwp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138.75" y="137.32394366197184"/>
+        </scene>
+        <!--select a curve-->
+        <scene sceneID="gHZ-Q2-xn7">
+            <objects>
+                <tableViewController id="Swh-Qs-QKR" customClass="CurvesTableViewController" customModule="CrazyRectangle" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3Pz-A1-XG1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="curveCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="curveCell" id="tUr-P8-SOB">
+                                <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tUr-P8-SOB" id="KTs-lc-AQw">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="gZt-8C-pHm" kind="unwind" unwindAction="unwindToCurve:" id="TCK-Xq-9aC"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Swh-Qs-QKR" id="5AQ-qY-lA2"/>
+                            <outlet property="delegate" destination="Swh-Qs-QKR" id="R4A-Sg-72g"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="select a curve" id="9RU-g9-yIV"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ibo-gb-ChY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="gZt-8C-pHm" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1616" y="137"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vim-XM-RR9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="en3-P0-sjX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f1K-ee-xzy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Swh-Qs-QKR" kind="relationship" relationship="rootViewController" id="pnq-IM-NZ3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="de4-SH-YFj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="881" y="136"/>
         </scene>
     </scenes>
 </document>

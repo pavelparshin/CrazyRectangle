@@ -9,8 +9,10 @@
 class AnimationDataManager {
 
     static let shared = AnimationDataManager()
-    
-    private init() {}
+
+    private init() {
+        selectCurve = curves.first!
+    }
     
     let animations = ["slideLeft", "slideRight", "slideDown", "slideUp",
                       "squeezeLeft", "squeezeRight", "squeezeDown", "squeezeUp",
@@ -26,4 +28,7 @@ class AnimationDataManager {
                   "easeInQuint", "easeOutQuint", "easeInOutQuint", "easeInExpo",
                   "easeOutExpo", "easeInOutExpo", "easeInCirc", "easeOutCirc",
                   "easeInOutCirc", "easeInBack", "easeOutBack", "easeInOutBack"]
+    
+    var selectCurve: String
+    
 }
