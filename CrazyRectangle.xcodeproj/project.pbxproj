@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		2BCFB2162498B5D30033BF25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BCFB2142498B5D30033BF25 /* Main.storyboard */; };
 		2BCFB2182498B5D50033BF25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BCFB2172498B5D50033BF25 /* Assets.xcassets */; };
 		2BCFB21B2498B5D50033BF25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BCFB2192498B5D50033BF25 /* LaunchScreen.storyboard */; };
+		39C600758E6AA3B6BD647286 /* Pods_CrazyRectangle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2F7F0AAA8BA46CE0DDE7CC4 /* Pods_CrazyRectangle.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		2BCFB2172498B5D50033BF25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BCFB21A2498B5D50033BF25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BCFB21C2498B5D50033BF25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4845C8180282BFBA9115E602 /* Pods-CrazyRectangle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrazyRectangle.debug.xcconfig"; path = "Target Support Files/Pods-CrazyRectangle/Pods-CrazyRectangle.debug.xcconfig"; sourceTree = "<group>"; };
+		C2F7F0AAA8BA46CE0DDE7CC4 /* Pods_CrazyRectangle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CrazyRectangle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D581A840A27BD6BBA42AFF74 /* Pods-CrazyRectangle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrazyRectangle.release.xcconfig"; path = "Target Support Files/Pods-CrazyRectangle/Pods-CrazyRectangle.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,62 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39C600758E6AA3B6BD647286 /* Pods_CrazyRectangle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B899BB52498B88A00C91EF9 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				2BCFB20E2498B5D30033BF25 /* AppDelegate.swift */,
+				2BCFB2102498B5D30033BF25 /* SceneDelegate.swift */,
+				2BCFB21C2498B5D50033BF25 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		2B899BB62498B8AD00C91EF9 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				2BCFB2172498B5D50033BF25 /* Assets.xcassets */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		2B899BB72498B8BF00C91EF9 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2BCFB2142498B5D30033BF25 /* Main.storyboard */,
+				2BCFB2192498B5D50033BF25 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		2B899BB82498B8CF00C91EF9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2BCFB2122498B5D30033BF25 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2B899BB92498B8E200C91EF9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		2BCFB2022498B5D30033BF25 = {
 			isa = PBXGroup;
 			children = (
 				2BCFB20D2498B5D30033BF25 /* CrazyRectangle */,
 				2BCFB20C2498B5D30033BF25 /* Products */,
+				44BD132873AE868E3A60C291 /* Pods */,
+				367B4CC1F47B3540AEB8E56A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +105,30 @@
 		2BCFB20D2498B5D30033BF25 /* CrazyRectangle */ = {
 			isa = PBXGroup;
 			children = (
-				2BCFB20E2498B5D30033BF25 /* AppDelegate.swift */,
-				2BCFB2102498B5D30033BF25 /* SceneDelegate.swift */,
-				2BCFB2122498B5D30033BF25 /* ViewController.swift */,
-				2BCFB2142498B5D30033BF25 /* Main.storyboard */,
-				2BCFB2172498B5D50033BF25 /* Assets.xcassets */,
-				2BCFB2192498B5D50033BF25 /* LaunchScreen.storyboard */,
-				2BCFB21C2498B5D50033BF25 /* Info.plist */,
+				2B899BB92498B8E200C91EF9 /* Model */,
+				2B899BB82498B8CF00C91EF9 /* ViewController */,
+				2B899BB72498B8BF00C91EF9 /* Storyboards */,
+				2B899BB52498B88A00C91EF9 /* SupportingFiles */,
+				2B899BB62498B8AD00C91EF9 /* Source */,
 			);
 			path = CrazyRectangle;
+			sourceTree = "<group>";
+		};
+		367B4CC1F47B3540AEB8E56A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2F7F0AAA8BA46CE0DDE7CC4 /* Pods_CrazyRectangle.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		44BD132873AE868E3A60C291 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4845C8180282BFBA9115E602 /* Pods-CrazyRectangle.debug.xcconfig */,
+				D581A840A27BD6BBA42AFF74 /* Pods-CrazyRectangle.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +138,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2BCFB21F2498B5D50033BF25 /* Build configuration list for PBXNativeTarget "CrazyRectangle" */;
 			buildPhases = (
+				0F29F0526E2B5903E606DED8 /* [CP] Check Pods Manifest.lock */,
 				2BCFB2072498B5D30033BF25 /* Sources */,
 				2BCFB2082498B5D30033BF25 /* Frameworks */,
 				2BCFB2092498B5D30033BF25 /* Resources */,
+				D7D29FD0CCEF7D5CAF538DEA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +198,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F29F0526E2B5903E606DED8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CrazyRectangle-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7D29FD0CCEF7D5CAF538DEA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CrazyRectangle/Pods-CrazyRectangle-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CrazyRectangle/Pods-CrazyRectangle-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CrazyRectangle/Pods-CrazyRectangle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2BCFB2072498B5D30033BF25 /* Sources */ = {
@@ -282,11 +390,12 @@
 		};
 		2BCFB2202498B5D50033BF25 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4845C8180282BFBA9115E602 /* Pods-CrazyRectangle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2ZXQUQVQEL;
-				INFOPLIST_FILE = CrazyRectangle/Info.plist;
+				INFOPLIST_FILE = CrazyRectangle/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,11 +409,12 @@
 		};
 		2BCFB2212498B5D50033BF25 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D581A840A27BD6BBA42AFF74 /* Pods-CrazyRectangle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2ZXQUQVQEL;
-				INFOPLIST_FILE = CrazyRectangle/Info.plist;
+				INFOPLIST_FILE = CrazyRectangle/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
