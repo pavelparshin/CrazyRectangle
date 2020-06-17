@@ -77,6 +77,9 @@ class MainViewController: UIViewController {
             rectActionView.duration = CGFloat(animationModel.duration)
             rectActionView.velocity = CGFloat(animationModel.velocity)
             rectActionView.repeatCount = animationModel.repeatCount
+            
+            AnimationDataManager.shared.selectCurve = animationModel.curve
+            
         } else {
             
             animationModel.isRandom = false
