@@ -8,6 +8,7 @@
 
 struct AnimationModel {
     var animation: String
+    var nextAnimation: String
     var curve: String
     var delay: Float
     var duration: Float
@@ -33,8 +34,9 @@ struct AnimationModel {
     }
     
     static func setDefault() -> AnimationModel {
-        return AnimationModel(animation: AnimationDataManager.shared.animations.first ?? "",
-                              curve: AnimationDataManager.shared.curves.first ?? "",
+        return AnimationModel(animation: AnimationDataManager.shared.animations.first!,
+                              nextAnimation: AnimationDataManager.shared.animations.first!,
+                              curve: AnimationDataManager.shared.curves.first!,
                               delay: 0,
                               duration: 0.8,
                               velocity: 0.7,

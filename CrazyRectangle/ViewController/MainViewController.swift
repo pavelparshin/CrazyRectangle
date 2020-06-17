@@ -36,20 +36,19 @@ class MainViewController: UIViewController {
         
         animationModel.curve = AnimationDataManager.shared.selectCurve
         showProperties()
-        print("viewDidAppear() \(animationModel.animation)")
     }
     
     //MARK: IB Action
     @IBAction func randomSwitchAction() {
         curveStackView.isHidden = isRandom.isOn
+        actionButton(buttonSetting)
     }
     
     @IBAction func actionButton(_ sender: SpringButton) {
         let action = animationModel.animation
         let selectCurve = AnimationDataManager.shared.selectCurve
         
-        setOptions(action: action, curve: selectCurve)
-        
+        setOptions(action: action, curve: selectCurve, buttonTag: sender.tag)
         showProperties()
         rectActionView.animate()
         
@@ -62,9 +61,14 @@ class MainViewController: UIViewController {
     //MARK: - Private methods
     
     //Setup properties for Spring animation
-    private func setOptions(action: String, curve: String) {
+    private func setOptions(action: String, curve: String, buttonTag: Int) {
         
-        rectActionView.animation = action
+        if buttonTag == 0 {
+            rectActionView.animation = animationModel.nextAnimation
+        } else {
+            rectActionView.animation = action
+        }
+        
         rectActionView.curve = curve
         
         if isRandom.isOn {
@@ -92,6 +96,7 @@ class MainViewController: UIViewController {
         let repeatCount = Float.random(in: 1...3)
         
         animationModel = AnimationModel(animation: animation,
+                                        nextAnimation: animation,
                                         curve: curve,
                                         delay: delay,
                                         duration: duration,
@@ -107,27 +112,29 @@ class MainViewController: UIViewController {
         selectCurveButton.setTitle(animationModel.curve, for: .normal)
         buttonSetting.setTitle("\(animationModel.animation)", for: .normal)
     }
-    
+
     private func nextAnimation(buttonTag: Int) {
         if isRandom.isOn {
             animationModel.animation = randomAnimation
         } else {
-            
-            let pastAnimation = animationModel.animation
-            //get index for current animation
-            let indexAnimation = animationData.animations.firstIndex(of: animationModel.animation) ?? 0
-            if indexAnimation < (animationData.animations.count - 1) {
-                animationModel.animation = animationData.animations[indexAnimation + 1]
-            } else {
-                animationModel.animation = animationData.animations.first!
-            }
-            
-            if buttonTag != 0 {
-                animationModel.animation = pastAnimation
+        
+            animationModel.nextAnimation = getNextAnimation(animation: animationModel.animation)
+            if buttonTag == 0 {
+                animationModel.animation = animationModel.nextAnimation
             }
         }
-    
-        buttonSetting.setTitle("next: \(animationModel.animation)", for: .normal)
+
+        buttonSetting.setTitle("next: \(animationModel.nextAnimation)", for: .normal)
+    }
+
+    private func getNextAnimation(animation: String) -> String {
+        let currentIndexAnimation = animationData.animations.firstIndex(of: animation) ?? 0
+        var nextIndexAnimation = currentIndexAnimation + 1
+        if nextIndexAnimation >= animationData.animations.count {
+            nextIndexAnimation = 0
+        }
+        
+        return animationData.animations[nextIndexAnimation]
     }
     
 }
