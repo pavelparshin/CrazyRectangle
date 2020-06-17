@@ -119,7 +119,6 @@
                     </view>
                     <connections>
                         <outlet property="buttonSetting" destination="WtI-hJ-Nfl" id="RYQ-vP-vew"/>
-                        <outlet property="currentCurveLabel" destination="fvm-E8-Mon" id="VV1-vM-TQo"/>
                         <outlet property="curveStackView" destination="5Kp-AE-2Hw" id="YMG-4U-G6z"/>
                         <outlet property="descriptionLabel" destination="IJ3-Qc-00z" id="X2V-J0-oik"/>
                         <outlet property="isRandom" destination="Kff-47-7gk" id="KuG-ZV-tJU"/>

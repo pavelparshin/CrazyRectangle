@@ -8,7 +8,11 @@
 
 struct AnimationModel {
     var animation: String
-    var nextAnimation: String
+    
+    var nextAnimation: String {
+        getNextAnimation(animation: animation)
+    }
+    
     var curve: String
     var delay: Float
     var duration: Float
@@ -34,8 +38,9 @@ struct AnimationModel {
     }
     
     static func setDefault() -> AnimationModel {
-        return AnimationModel(animation: AnimationDataManager.shared.animations.first!,
-                              nextAnimation: AnimationDataManager.shared.animations.first!,
+        let animation = AnimationDataManager.shared.animations.first!
+        
+        return AnimationModel(animation: animation,
                               curve: AnimationDataManager.shared.curves.first!,
                               delay: 0,
                               duration: 0.8,
@@ -45,5 +50,16 @@ struct AnimationModel {
     
     private func string(_ number: Float) -> String {
         return String(format: "%.2f", number)
+    }
+    
+    func getNextAnimation(animation: String) -> String {
+        let animations = AnimationDataManager.shared.animations
+        let currentIndexAnimation = animations.firstIndex(of: animation) ?? 0
+        var nextIndexAnimation = currentIndexAnimation + 1
+        if nextIndexAnimation >= animations.count {
+            nextIndexAnimation = 0
+        }
+        
+        return animations[nextIndexAnimation]
     }
 }
