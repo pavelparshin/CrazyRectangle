@@ -1,0 +1,6 @@
+framework module Pods_CrazyRectangle {
+  umbrella header "Pods-CrazyRectangle-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -16,7 +16,10 @@ class CurvesTableViewController: UITableViewController {
         super.viewDidLoad()
 
     }
-
+    @IBAction func closeButton() {
+        dismiss(animated: true)
+    }
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return curves.count

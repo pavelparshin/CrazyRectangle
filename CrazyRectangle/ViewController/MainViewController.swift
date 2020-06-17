@@ -36,6 +36,7 @@ class MainViewController: UIViewController {
         
         animationModel.curve = AnimationDataManager.shared.selectCurve
         showProperties()
+        print("viewDidAppear() \(animationModel.animation)")
     }
     
     //MARK: IB Action
@@ -52,7 +53,7 @@ class MainViewController: UIViewController {
         showProperties()
         rectActionView.animate()
         
-        nextAnimation()
+        nextAnimation(buttonTag: sender.tag)
     }
     
     @IBAction func unwindToCurve(_ unwindSegue: UIStoryboardSegue) {
@@ -107,17 +108,22 @@ class MainViewController: UIViewController {
         buttonSetting.setTitle("\(animationModel.animation)", for: .normal)
     }
     
-    private func nextAnimation() {
+    private func nextAnimation(buttonTag: Int) {
         if isRandom.isOn {
             animationModel.animation = randomAnimation
         } else {
             
+            let pastAnimation = animationModel.animation
             //get index for current animation
             let indexAnimation = animationData.animations.firstIndex(of: animationModel.animation) ?? 0
             if indexAnimation < (animationData.animations.count - 1) {
                 animationModel.animation = animationData.animations[indexAnimation + 1]
             } else {
                 animationModel.animation = animationData.animations.first!
+            }
+            
+            if buttonTag != 0 {
+                animationModel.animation = pastAnimation
             }
         }
     

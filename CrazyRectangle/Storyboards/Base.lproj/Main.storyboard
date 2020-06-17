@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CrazyRectangle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="CrazyRectangle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,10 +24,10 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngO-TZ-9Rt" customClass="SpringButton" customModule="Spring">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngO-TZ-9Rt" customClass="SpringButton" customModule="Spring">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="175"/>
                                         <connections>
-                                            <action selector="actionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H93-kC-v0T"/>
+                                            <action selector="actionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sLP-4g-4YJ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -148,7 +148,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="gZt-8C-pHm" kind="unwind" unwindAction="unwindToCurve:" id="TCK-Xq-9aC"/>
+                                    <segue destination="gZt-8C-pHm" kind="unwind" trigger="accessoryAction" unwindAction="unwindToCurve:" id="4fx-5a-3bw"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -157,7 +157,14 @@
                             <outlet property="delegate" destination="Swh-Qs-QKR" id="R4A-Sg-72g"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="select a curve" id="9RU-g9-yIV"/>
+                    <navigationItem key="navigationItem" title="select a curve" id="9RU-g9-yIV">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="hog-NJ-VBf">
+                            <connections>
+                                <action selector="closeButton" destination="Swh-Qs-QKR" id="T5O-oS-b2J"/>
+                                <segue destination="gZt-8C-pHm" kind="unwind" unwindAction="unwindToCurve:" id="4o4-Bn-BPv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ibo-gb-ChY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="gZt-8C-pHm" userLabel="Exit" sceneMemberID="exit"/>
