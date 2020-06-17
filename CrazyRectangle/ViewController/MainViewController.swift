@@ -45,6 +45,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func actionButton(_ sender: SpringButton) {
+        
         let action = animationModel.animation
         let selectCurve = AnimationDataManager.shared.selectCurve
         
@@ -119,9 +120,7 @@ class MainViewController: UIViewController {
         } else {
         
             animationModel.nextAnimation = getNextAnimation(animation: animationModel.animation)
-            if buttonTag == 0 {
-                animationModel.animation = animationModel.nextAnimation
-            }
+            animationModel.animation = animationModel.nextAnimation
         }
 
         buttonSetting.setTitle("next: \(animationModel.nextAnimation)", for: .normal)
