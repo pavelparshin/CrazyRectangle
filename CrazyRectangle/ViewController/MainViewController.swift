@@ -112,8 +112,6 @@ class MainViewController: UIViewController {
                 animationModel.nextRandomAnimation = randomAnimation.animation
             }
         }
-
-        showProperties()
     }
 }
 
