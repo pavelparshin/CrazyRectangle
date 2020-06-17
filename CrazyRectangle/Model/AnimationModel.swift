@@ -7,17 +7,24 @@
 //
 
 struct AnimationModel {
-    var animation: String
+    var animation = AnimationDataManager.shared.animations.first!
     
     var nextAnimation: String {
-        getNextAnimation(animation: animation)
+        if isRandom {
+            return nextRandomAnimation ?? animation
+        } else {
+            return getNextAnimation(animation: animation)
+        }
     }
     
-    var curve: String
-    var delay: Float
-    var duration: Float
-    var velocity: Float
-    var repeatCount: Float
+    var nextRandomAnimation: String?
+    var isRandom = false
+    
+    var curve = AnimationDataManager.shared.curves.first!
+    var delay: Float = 0
+    var duration: Float = 0.8
+    var velocity: Float = 0.7
+    var repeatCount: Float = 1
     
     var shortDescription: String {
         """
@@ -37,15 +44,15 @@ struct AnimationModel {
         """
     }
     
-    static func setDefault() -> AnimationModel {
-        let animation = AnimationDataManager.shared.animations.first!
-        
-        return AnimationModel(animation: animation,
-                              curve: AnimationDataManager.shared.curves.first!,
-                              delay: 0,
-                              duration: 0.8,
-                              velocity: 0.7,
-                              repeatCount: 1)
+    mutating func setRandomAnimation() {
+        animation = AnimationDataManager.shared.animations.randomElement()!
+        curve = AnimationDataManager.shared.curves.randomElement()!
+        nextRandomAnimation = animation
+        isRandom = true
+        delay = Float.random(in: 0...0.5)
+        duration = Float.random(in: 0.5...1.5)
+        velocity = Float.random(in: 0.2...0.9)
+        repeatCount = Float.random(in: 1...3)
     }
     
     private func string(_ number: Float) -> String {
